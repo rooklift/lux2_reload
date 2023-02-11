@@ -1,12 +1,10 @@
 import json
 
 with open("reload_config.json") as configfile:
-	f = configfile.read()
-	config = json.loads(f)
+	config = json.loads(configfile.read())
 
 with open(config["replay"]) as replayfile:
-	f = replayfile.read()
-	replay = json.loads(f)
+	replay = json.loads(replayfile.read())
 
 player_int = config["team"]
 player_string = "player_{}".format(player_int)
