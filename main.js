@@ -1,10 +1,18 @@
 "use strict";
 
-const path = require("path");
+const fs = require("fs");
 const readline = require("readline");
 
 const config = require("./reload_config.json");
-const replay = require(path.join(__dirname, config.replay));
+
+let replay;
+try {
+	let buf = fs.readFileSync(config.replay);
+	replay = JSON.parse(buf);
+} catch(err) {
+	console.log(err);
+	process.exit(1);
+}
 
 let scanner = readline.createInterface({
 	input: process.stdin,
