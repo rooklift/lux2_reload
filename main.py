@@ -106,7 +106,7 @@ def agent(observation, configuration):
     data = json.dumps(dict(obs=obs_inputs, step=observation.step, remainingOverageTime=observation.remainingOverageTime, player=observation.player, info=configuration))
    
     # agent_process.stdin.write(f"{data}\n".encode())           # rooklift: for this hack (lux2_reload) we will simply send a newline.
-    agent_process.stdin.write(f"\n".encode())
+    agent_process.stdin.write("\n".encode())
     agent_process.stdin.flush()
 
     agent1res = (agent_process.stdout.readline()).decode()
