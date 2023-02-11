@@ -28,10 +28,10 @@ let i = 0;
 
 function send_next() {
 	let output;
-	if (replay.actions) {												// Local format replay.
+	if (replay.actions) {
 		output = replay.actions[i++][`player_${config.team}`];
-	} else {															// Kaggle format replay.
-		output = replay.steps[++i][config.team].action;					// NOTE: actions are out by 1 on Kaggle, so do ++i not i++
+	} else {
+		output = replay.steps[++i][config.team].action;		// NOTE: actions are out by 1 on Kaggle, so do ++i not i++
 	}
 	console.log(JSON.stringify(output));
 }
