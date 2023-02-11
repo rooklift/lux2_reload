@@ -89,7 +89,7 @@ def agent(observation, configuration):
     agent_process = agent_processes[observation.player]
     ### Do not edit ###
     if agent_process is None:
-        agent_process = Popen(["node", "main.js"], stdin=PIPE, stdout=PIPE, stderr=PIPE, cwd=cwd)
+        agent_process = Popen(["python", "bot.py"], stdin=PIPE, stdout=PIPE, stderr=PIPE, cwd=cwd)
         agent_processes[observation.player] = agent_process
         atexit.register(cleanup_process)
 

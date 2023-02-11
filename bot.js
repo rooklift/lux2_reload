@@ -1,5 +1,7 @@
 "use strict";
 
+// Note - this JS version is not used now.
+
 const fs = require("fs");
 const readline = require("readline");
 
